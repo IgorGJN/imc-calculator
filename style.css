@@ -1,0 +1,129 @@
+.padrao {
+    --background-color: #001669;
+    --font-color: #FFFFFF;
+    --destaque-color: #4450B1;
+    --emoji: url("img/imc.png");
+}
+
+.verde {
+    --background-color: #9AE884;
+    --font-color: #000000;
+    --destaque-color: #2D7D21;
+    --emoji: url("img/feliz.png");
+}
+
+.amarelo {
+    --background-color: #FFFF88;
+    --font-color: #000000;
+    --destaque-color: #F7FF00;
+    --emoji: url("img/pensativo.png");
+}
+
+.vermelho {
+    --background-color: #FFAC7B;
+    --font-color: #000000;
+    --destaque-color: #FD1205;
+    --emoji: url("img/pensativo.png");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    font-size: 16px;
+    color: var(--font-color);
+}
+
+.cabecalho {
+    text-align: center;
+    padding: 1rem;
+    margin: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.calculator {
+    margin: 0 2rem;
+    text-align: center;
+}
+
+.calculator__dados {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    border: 2px solid var(--destaque-color);
+}
+
+.calculator__titulo {
+    padding: 0.5rem;
+}
+
+.calculator__peso {
+    margin-top: 1rem;
+}
+
+.calculator__entrada {
+    width: 80%;
+    height: 2rem;
+    color: var(--destaque-color);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.calculator__entrada:focus{
+    box-shadow: 8px 8px var(--destaque-color);
+}
+
+
+.calculator__botao {
+    display: block;
+    margin: 2rem auto 1rem auto;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+    width: 80%;
+    height: 3.5rem;
+    font-weight: 700;
+    background-color: var(--destaque-color);
+    color: var(--font-color);
+}
+
+.calculator__botao:hover {
+    background-color: var(--font-color);
+    color: var(--destaque-color);
+}
+
+.calculator__recarregar {
+    display: inline-block;
+    width: 80%;
+    padding: 1rem 0;
+    margin: 0.5rem auto;
+    background-color: var(--font-color);
+    color: var(--background-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: none;
+}
+
+.calculator__recarregar:hover {
+    background-color: var(--destaque-color);
+    color: var(--font-color);
+}
+
+.emoji {
+    width: 12rem;
+    height: 12rem;
+    background-image: var(--emoji);
+    margin: 1rem auto;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+
