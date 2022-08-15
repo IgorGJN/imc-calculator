@@ -29,6 +29,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
@@ -95,23 +96,6 @@ body {
     color: var(--destaque-color);
 }
 
-.calculator__recarregar {
-    display: inline-block;
-    width: 80%;
-    padding: 1rem 0;
-    margin: 0.5rem auto;
-    background-color: var(--font-color);
-    color: var(--background-color);
-    font-size: 1.5rem;
-    text-decoration: none;
-    display: none;
-}
-
-.calculator__recarregar:hover {
-    background-color: var(--destaque-color);
-    color: var(--font-color);
-}
-
 .emoji {
     width: 12rem;
     height: 12rem;
@@ -120,9 +104,18 @@ body {
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: contain;
+    box-shadow: 5px 5px #555555;
 }
 
+.ocultar {
+    display: none;
+}
 
+.calculator__recarregar {
+    height: auto;
+    padding: 1rem;
+    font-weight: 700;
+}
 
 
 
