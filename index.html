@@ -14,14 +14,17 @@
         <h1 class="cabecalho">IMC Calculator</h1>
     </header>
     <main class="calculator">
-        <div class="calculator__dados esconder">
-            <h2 class="calculator__titulo">Altura</h2>
-            <input type="text" id="altura-informada" class="calculator__entrada" placeholder="cm">
-            <h2 class="calculator__titulo calculator__peso">Peso</h2>
-            <input type="text" id="peso-informado" class="calculator__entrada" placeholder="kg">
-        </div>
-        <button id="resultado" class="calculator__botao esconder">Resultado</button>
-        <a href="index.html" class="calculator__botao calculator__recarregar esconder ocultar">Novo cálculo</a>
+            <section class="esconder">
+            <div class="calculator__dados">
+                <h2 class="calculator__titulo">Altura</h2>
+                <input type="text" id="altura-informada" class="calculator__entrada" placeholder="cm">
+                <h2 class="calculator__titulo calculator__peso">Peso</h2>
+                <input type="text" id="peso-informado" class="calculator__entrada" placeholder="kg">
+            </div>
+            <button id="resultado" class="calculator__botao">Resultado</button>
+        </section>
+        <section class="resultado-imc"></section>
+        <a href="index.html" class="calculator__botao calculator__recarregar ocultar">Novo cálculo</a>
         <div class="emoji"></div>
     </main>
     <script src="main.js"></script>

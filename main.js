@@ -1,67 +1,88 @@
-const resultado = document.querySelector('.calculator__botao');
+const botao = document.querySelector('.calculator__botao');
 const cor = document.querySelector('.padrao');
-const calculatorArea = document.querySelectorAll('.esconder');
+const calculatorArea = document.querySelector('.esconder');
+const recarregar = document.querySelector('.calculator__recarregar');
+const escrever = document.querySelector('.resultado-imc');
+
+var  imc;
+var mensagem;
+var tema = "padrao";
 
 
-
+// Correto
 function ocultar() {
     calculatorArea.classList.toggle("ocultar");
+    recarregar.classList.toggle("ocultar");
 }
 
-var alturaInformada = document.getElementById("altura-informada").value;
-var pesoInformado = document.getElementById("peso-informado").value;
+function exibirResposta() {
+    escrever.innerHTML = `
+    <h1 class="resposta-imc">Seu IMC é ${imc}</h1>
+    <h2>${mensagem}</h2>
+    
+    `
+}
 
+function pegarDados() {
+    var alturaInformada = document.getElementById("altura-informada");
+    var pesoInformado = document.getElementById("peso-informado");
+    var altura = alturaInformada.value;
+    var peso = pesoInformado.value;
+    imc = calcularIMC(altura, peso);
+}
 
 function calcularIMC(altura, peso) {
     return peso / ((altura /100) * (altura/100));
 }
 
-resultado.addEventListener('click', () => {
-        calcularIMC(alturaInformada, pesoInformado);
-        ocultar()
-        console.log (calcularIMC);
-        console.log (alturaInformada);
-        console.log (pesoInformado);
+
+botao.addEventListener('click', () => {
+        pegarDados();
+        ocultar();
+        classificao();
+        exibirResposta();
+        mudaCor();
     })
 
-var imc = 40;
-var tema = "padrao";
 
 function mudaCor () {
     cor.classList.toggle(tema);
 }
 
-function resposta() {
-    if (imc === 18.5) {
+function classificao() {
+    console.log(imc);
+    imc = parseInt(imc);
+    console.log(imc)
+    imc = Math.round(imc);
+    console.log(imc);
+    if (imc < 18,5) {
+        mensagem = "Seu IMC está menor que 18,5. <br>Você está na classificação magreza.<br>Atenção!";
         tema = "vermelho";
     } else
-    if (imc === 18 && imc === 24) {
+    if (imc > 18,5 && imc < 24,9) {
+        mensagem = "Seu IMC está entre 18,5 e 24,9. <br>Você está na classificação normal.<br>Parabéns!";
         tema = "verde";
-        console.log(tema)
     } else
-    if (imc === 25) {
+    if (imc > 25 && imc < 29,9) {
+        mensagem = "Seu IMC está entre 25 e 29,9. <br>Você está na classificação sobrepeso.<br>Cuidado!";
         tema = "amarelo";
     } else
-    if (imc === 30 && imc === 34) {
-        tema = "amarelo";
-    } else
-    if (imc === 35 && imc === 39) {
+    if (imc > 30 && imc < 34,9) {
+        mensagem = "Seu IMC está entre 30 e 34,9. <br>Você está na classificação obesidade grau I.<br>Atenção!";
         tema = "vermelho";
     } else
-    if (imc === 40) {
+    if (imc > 35 && imc < 39,9) {
+        mensagem = "Seu IMC está entre 35 e 39,9. <br>Você está na classificação obesidade grau II.<br>Atenção!";
         tema = "vermelho";
     } else
-    mudaCor();
-    console.log(tema);
-//    ocultar();
+    if (imc > 40) {
+        mensagem = "Seu IMC está maior que 40. <br>Você está na classificação obesidade grau III.<br>Atenção!";
+        tema = "vermelho";
+    }
+    imc = Math.round(imc);
 }
 
-resposta();
+var teste = 5;
 
 
-// var alturaInformada = prompt("Qual sua altura? (em cm)");
-// var pesoInformado = prompt("Qual seu peso?");
 
-// var imc = Math.round(calcularIMC(alturaInformada, pesoInformado));
-
-// console.log(imc);
