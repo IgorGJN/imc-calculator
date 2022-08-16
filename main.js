@@ -1,14 +1,11 @@
 const resultado = document.querySelector('.calculator__botao');
 const cor = document.querySelector('.padrao');
-const calculator = document.querySelector('.esconder');
-const calculator2 = document.querySelector('.esconder2');
-const calculator3 = document.querySelector('.esconder3');
+const calculatorArea = document.querySelectorAll('.esconder');
 
 
 
 function ocultar() {
-    calculator.classList.toggle("ocultar");
-    calculator2.classList.toggle("ocultar");    calculator3.classList.toggle("ocultar");
+    calculatorArea.classList.toggle("ocultar");
 }
 
 var alturaInformada = document.getElementById("altura-informada").value;
