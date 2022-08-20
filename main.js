@@ -50,33 +50,31 @@ function mudaCor () {
 }
 
 function classificao() {
-    imc = parseInt(imc);
-    imc = Math.round(imc);
     if (imc < 18.5) {
         mensagem = "Seu IMC está menor que 18,5. <br>Você está na classificação magreza.<br>Atenção!";
         tema = "vermelho";
     } else
-    if (imc > 18.5 && imc < 24.9) {
+    if (imc >= 18.5 && imc < 24.99) {
         mensagem = "Seu IMC está entre 18,5 e 24,9. <br>Você está na classificação normal.<br>Parabéns!";
         tema = "verde";
     } else
-    if (imc > 25 && imc < 29.9) {
+    if (imc >= 25 && imc < 29.99) {
         mensagem = "Seu IMC está entre 25 e 29,9. <br>Você está na classificação sobrepeso.<br>Cuidado!";
         tema = "amarelo";
     } else
-    if (imc > 30 && imc < 34.9) {
+    if (imc >= 30 && imc < 34.99) {
         mensagem = "Seu IMC está entre 30 e 34,9. <br>Você está na classificação obesidade grau I.<br>Atenção!";
         tema = "vermelho";
     } else
-    if (imc > 35 && imc < 39.9) {
+    if (imc >= 35 && imc < 39.99) {
         mensagem = "Seu IMC está entre 35 e 39,9. <br>Você está na classificação obesidade grau II.<br>Atenção!";
         tema = "vermelho";
     } else
-    if (imc > 40) {
+    if (imc >= 40) {
         mensagem = "Seu IMC está maior que 40. <br>Você está na classificação obesidade grau III.<br>Atenção!";
         tema = "vermelho";
     }
-    imc = Math.round(imc);
+    imc = parseInt(imc);
 }
 
 
